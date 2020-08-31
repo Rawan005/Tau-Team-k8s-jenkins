@@ -14,5 +14,9 @@ kubectl  label node k3d-tauteam-cluster-server-0 type=master
 WAIT=90
 echo "Sleeping for $WAIT"
 sleep $WAIT
+kubectl create -n jenkins clusterrolebinding jenkins-account --clusterrole=cluster-admin --serviceaccount=jenkins:jenkins
+kubectl create -n elf clusterrolebinding jenkins --clusterrole=cluster-admin --serviceaccount=jenkins:default
+kubectl create -n monitor  clusterrolebinding jenkins2 --clusterrole=cluster-admin --serviceaccount=jenkins:default
+
 echo "Making progress"
 . query.sh
