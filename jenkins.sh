@@ -9,7 +9,7 @@
 	    --agents 2
 kubectl apply -f jenkins.namespace.yaml -f jenkins.helm.yaml -f ingress.yaml
 kubectl  label node k3d-tauteam-cluster-agent-0 type=worker-0
-kubectl  label node k3d-tauteam-cluster-agent-1 type=worker-0
+kubectl  label node k3d-tauteam-cluster-agent-1 type=worker-1
 kubectl  label node k3d-tauteam-cluster-server-0 type=master
 WAIT=90
 echo "Sleeping for $WAIT"
