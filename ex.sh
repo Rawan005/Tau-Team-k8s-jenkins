@@ -1,5 +1,3 @@
-kubectl get node --selector='!node-role.kubernetes.io/agent'
 
-k3d-tauteam-cluster-agent-0    Ready    <none>   7m6s   v1.18.6+k3s1
-k3d-tauteam-cluster-agent-1    Ready    <none>   7m6s   v1.18.6+k3s1
-k3d-tauteam-cluster-server-0
+#kubectl get node --selector='!node-role.kubernetes.io/agent'
+kubectl get pod -o=custom-columns=NAME:.metadata.name,STATUS:.status.phase,NODE:.spec.nodeName --all-namespaces
