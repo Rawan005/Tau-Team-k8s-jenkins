@@ -26,3 +26,4 @@ kubectl get service/kibana-kibana  -n elf
 kubectl get service/prometheus-operator-grafana -n monitor  
 
 kubectl get pod -o=custom-columns=NAME:.metadata.name,STATUS:.status.phase,NODE:.spec.nodeName --all-namespaces
+kubectl get pod -o=custom-columns=NAME:.metadata.name,STATUS:.status.phase,NODE:.spec.nodeName -n test
